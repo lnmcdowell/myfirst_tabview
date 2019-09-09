@@ -16,6 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let vc1 = UIViewController()
+        vc1.view.backgroundColor = .orange
+        vc1.tabBarItem.title = "Orange"
+        vc1.tabBarItem.image = UIImage(named: "youtube")
+        
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = .blue
+        vc2.tabBarItem.title = "blue"
+        vc2.tabBarItem.image = UIImage(named: "star")
+        
+        let vc3 = UIViewController()
+        vc3.view.backgroundColor = .purple
+        vc3.tabBarItem.title = "purple"
+        vc3.tabBarItem.image = UIImage( named: "purple")
+//
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [vc1,vc2,vc3]
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
